@@ -122,19 +122,13 @@ def llama_new_forward(
                                        device=attn_weights.device)
 
             self.shared_dict['dual_tokens'] = dual_tokens
-            print("len(dual_tokens): ", len(dual_tokens))
             self.shared_dict['text_only'] = text_only
-            print("len(text_only): ", len(text_only))
             self.shared_dict['visual_only'] = visual_only
-            print("len(visual_only): ", len(visual_only))
-            print("total_tokens: ", len(dual_tokens) + len(text_only) + len(visual_only))
 
             overlapping_indices = dual_tokens - self.img_start_idx
             importance = importance_scores[:, overlapping_indices]
             sigmoid_importance = torch.sigmoid(importance) * self.beta + self.alpha
             self.shared_dict['sigmoid_importance'] = sigmoid_importance.to(attn_weights.dtype)
-            print("self.shared_dict['sigmoid_importance']: ", self.shared_dict['sigmoid_importance'])
-
 
         # Apply enhancement in layers >= intermediate_layer_id
         if hasattr(self, 'intermediate_layer_id') and self.layer_idx >= self.intermediate_layer_id:
