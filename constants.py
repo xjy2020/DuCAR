@@ -29,8 +29,7 @@ INSTRUCTION_TEMPLATE_NO_IMG = {
 SYSTEM_MESSAGE = "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions."
 
 POPE_CHAT_PATH = {
-    "random": "modPAI/pope_coco/chat/coco_pope_chat_random.json",
-    "popular": "modPAI/pope_coco/chat/coco_pope_chat_popular.json",
-    "adversarial": "modPAI/pope_coco/chat/coco_pope_chat_adversarial.json",
-    "example":"modPAI/pope_coco/chat/coco_pope_chat_example.json",
+    "random": "pope_coco/chat/coco_pope_chat_random.json",
+    "popular": "pope_coco/chat/coco_pope_chat_popular.json",
+    "adversarial": "pope_coco/chat/coco_pope_chat_adversarial.json",
 }

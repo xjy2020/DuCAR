@@ -34,3 +34,4 @@ python modPAI/pope_eval.py --model model_name --batch_size 1  --data-path /path/
 ```bash
 python chair.py --cap_file /path/to/jsonl
 ```
+
